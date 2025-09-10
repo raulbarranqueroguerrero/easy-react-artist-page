@@ -1,4 +1,6 @@
 [build]
-  node_version = "20"
   command = "yarn build"
-  publish = "build"
+  publish = "build"   # si usas Vite
+
+[build.environment]
+  NODE_VERSION = "20"
