@@ -1,5 +1,4 @@
 import { instagramLink, spotifyPage, tiktokLink, youtubeLink } from "../constants";
-import { isMobile } from "../utils/screen";
 import { LinkIcon } from "./LinkIcon";
 
 export const Links = () => {
@@ -11,9 +10,6 @@ export const Links = () => {
 			margin: '0 auto',
 			alignItems: 'center',
 			justifyContent: 'center',
-			position: !isMobile && 'absolute',
-			bottom: !isMobile && '-25%',
-			left: !isMobile && '25%'
 		}}>
 			<LinkIcon
 				href={spotifyPage}
