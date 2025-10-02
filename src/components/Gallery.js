@@ -45,7 +45,7 @@ const Gallery = () => {
 				position: "relative",
 				width: "100%",
 				cursor: "pointer",
-				margin: isMobile ? '2rem' : '4rem'
+				margin: isMobile ? 'auto' : '4rem'
 			}}
 		>
 
@@ -69,7 +69,7 @@ const Gallery = () => {
 					background: "black",
 					overflow: "hidden",
 					borderRadius: "16px",
-					margin: isMobile ? '1rem auto' : "0 auto",
+					margin: isMobile ? '1rem' : "0 auto",
 					zIndex: 12
 				}}
 			>
@@ -81,11 +81,10 @@ const Gallery = () => {
 						width: "100%",
 						maxHeight: "70vh",
 						minHeight: "60vh",
-						objectFit: "contain",
+						objectFit: isMobile ? "cover" : "contain",
 						display: "block",
 						backgroundColor: "black",
 						transition: "all 0.5s ease",
-						transform: isMobile && 'scale(1.9)',
 					}}
 				/>
 			</div>
