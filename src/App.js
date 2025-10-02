@@ -11,6 +11,7 @@ import Gallery from './components/Gallery';
 import { Contact } from './components/Contact';
 import ElSalonForm from './components/ElSalonForm';
 import Fire from './img/fire_video.mp4';
+import { isMobile } from './utils/screen';
 
 const HomePage = () => (
 	<div
@@ -93,20 +94,31 @@ const ElSalonPage = () => {
 	return (
 		<div
 			style={{
-				width: '100%',
-				height: '100vh',
+				width: isMobile ? '100vw' : '100%',
 				minHeight: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
-				overflow: 'hidden',
-				padding: '2rem',
-				backgroundColor: '#282c34',
+				overflowX: isMobile ? 'hidden' : 'visible',
+				padding: '1rem',
 				boxSizing: 'border-box',
+				backgroundColor: '#282c34',
 			}}
 		>
-			<ElSalonForm />
+			<div
+				style={{
+					width: isMobile ? '100vw' : '600px',
+					maxWidth: '100%',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}
+			>
+				<ElSalonForm style={{ width: '100%', maxWidth: '100%' }} />
+			</div>
+
 			<button
 				onClick={() => navigate("/")}
 				style={{

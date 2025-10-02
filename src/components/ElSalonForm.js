@@ -1,5 +1,6 @@
 // ElSalonForm.js
 import React from "react";
+import { isMobile } from "react-device-detect";
 import { Link } from "react-router-dom";
 
 const ElSalonForm = () => {
@@ -14,7 +15,7 @@ const ElSalonForm = () => {
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
-				padding: '2rem',
+				padding: isMobile ? '1.25rem' : '2rem',
 				backgroundColor: '#282c34',
 				boxSizing: 'border-box',
 			}}
