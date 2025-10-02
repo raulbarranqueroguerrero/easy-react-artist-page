@@ -1,7 +1,6 @@
 // ElSalonForm.js
 import React from "react";
 import { isMobile } from "react-device-detect";
-import { Link } from "react-router-dom";
 
 const ElSalonForm = () => {
 	const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScatm9dm58AccPB9xkGg9wsA3P-6qQMR6v8MBqOztBKxRD--g/viewform?usp=sharing&ouid=104438470978826541180";
@@ -35,25 +34,6 @@ const ElSalonForm = () => {
 					backgroundColor: 'white',
 				}}
 			/>
-
-			<Link
-				to="/"
-				style={{
-					marginTop: '2rem',
-					color: 'white',
-					textDecoration: 'none',
-					border: '2px solid white',
-					padding: '0.8rem 1.2rem',
-					borderRadius: '50px',
-					cursor: 'pointer',
-					transition: '0.3s',
-					textAlign: 'center',
-				}}
-				onMouseEnter={e => e.currentTarget.style.backgroundColor = '#ff6666'}
-				onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
-			>
-				Back to home page
-			</Link>
 		</div>
 	);
 };
