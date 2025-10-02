@@ -1,7 +1,7 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
 import { isMobile } from "../utils/screen";
 import MainPhoto from '../img/landing.jpg';
-import { Spotify } from "react-spotify-embed";
 import { HacerloBienSong } from "../constants";
 
 
@@ -96,6 +96,7 @@ const Landing = () => {
 						))}
 					</h1>
 				</div>
+
 				<div style={{
 					display: 'flex',
 					flexDirection: 'column',
@@ -121,15 +122,11 @@ const Landing = () => {
 					}}>
 						INDIE CHILL ROCK
 					</p>
-					<div style={{ marginTop: isMobile ? '0.5rem' : '1rem' }} >
-						<Spotify
-							link={HacerloBienSong}
-							style={{ width: '100%', height: '100%' }}
-						/>
+					<div style={{ marginTop: isMobile ? '0.5rem' : '1rem', width: '100%', maxWidth: 400 }}>
+						<SpotifyIframe link={HacerloBienSong} />
 					</div>
 				</div>
 			</div>
-
 
 			<style>
 				{`
@@ -140,7 +137,25 @@ const Landing = () => {
 				`}
 			</style>
 
-		</div >
+		</div>
+	);
+};
+
+const SpotifyIframe = ({ link }) => {
+	const trackId = link.split("/track/")[1]?.split("?")[0];
+	const embedLink = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=1`;
+
+	return (
+		<iframe
+			src={embedLink}
+			width="300"
+			height="80"
+			frameBorder="0"
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+			loading="lazy"
+			style={{ borderRadius: '8px' }}
+			theme={0}
+		/>
 	);
 };
 

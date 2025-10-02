@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import live_pic_01 from ".././img/live_pic_01.jpg";
-import live_pic_02 from ".././img/live_pic_02.jpg";
-import live_pic_04 from ".././img/live_pic_04.jpg";
-import live_pic_14 from ".././img/live_pic_14.jpg";
-import live_pic_16 from ".././img/live_pic_16.jpg";
-import live_pic_17 from ".././img/live_pic_17.jpg";
+import live_pic_01 from ".././img/live_pic_01.webp";
+import live_pic_02 from ".././img/live_pic_02.webp";
+import live_pic_04 from ".././img/live_pic_04.webp";
+import live_pic_14 from ".././img/live_pic_14.webp";
+import live_pic_16 from ".././img/live_pic_16.webp";
+import live_pic_17 from ".././img/live_pic_17.webp";
 import PressKit from '../docs/Press_kit.pdf';
 
 import { isMobile } from "../utils/screen";
@@ -14,6 +14,13 @@ import { isMobile } from "../utils/screen";
 const Gallery = () => {
 	const images = [live_pic_01, live_pic_02, live_pic_04, live_pic_14, live_pic_16, live_pic_17];
 	const [currentIndex, setCurrentIndex] = useState(0);
+
+	React.useEffect(() => {
+		images.forEach((src) => {
+			const img = new Image();
+			img.src = src;
+		});
+	});
 
 	const prevSlide = () => {
 		setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -69,6 +76,7 @@ const Gallery = () => {
 				<img
 					src={images[currentIndex]}
 					alt={`gallery-${currentIndex}`}
+					loading="lazy"
 					style={{
 						width: "100%",
 						maxHeight: "70vh",
