@@ -6,7 +6,7 @@ import Landing from './components/Landing';
 import Waves from './components/Waves';
 import About from './components/About';
 import Tour from './components/Tour';
-import Songs from './components/Songs';
+import { Songs } from './components/Songs';
 import Gallery from './components/Gallery';
 import { Contact } from './components/Contact';
 import ElSalonForm from './components/ElSalonForm';
